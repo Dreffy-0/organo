@@ -1,7 +1,7 @@
 import "./Botao.css";
 
-const Botao = props => {
-	return <button className="botao-formulario">{props.children}</button>;
+const Botao = ({ texto }) => {
+	return <button className="botao-formulario">{texto}</button>;
 };
 
 export default Botao;
