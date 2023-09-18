@@ -14,6 +14,20 @@ code {
 	text-align: center;
 }
 
+.cabecalho-times {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.alternarFormulario {
+	width: 6.25rem;
+	height: 6.25rem;
+	position: absolute;
+	right: 0;
+}
+
 h1 {
 	font-size: 2.5rem;
 	color: #6278f7;
