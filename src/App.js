@@ -47,6 +47,10 @@ function App() {
 
 	const [colaboradores, setColaboradores] = useState([]);
 
+	const [mostrarFormulario, setMostrarFormulario] = useState(false);
+
+	const alternarFormulario = () => setMostrarFormulario(!mostrarFormulario);
+
 	const NovoColaboradorCadastrado = colaborador => {
 		setColaboradores([...colaboradores, colaborador]);
 	};
@@ -82,10 +86,14 @@ function App() {
 	return (
 		<div className="App">
 			<Banner />
-			<Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => NovoColaboradorCadastrado(colaborador)} cadastrarTime={cadastrarTime} />
-
+			{mostrarFormulario ? (
+				<Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => NovoColaboradorCadastrado(colaborador)} cadastrarTime={cadastrarTime} />
+			) : null}
 			<section className="times">
-				<h1>Minha organização</h1>
+				<div className="cabecalho-times">
+					<h1>Minha organização</h1>
+					<img src="/images/BotaoAlternarFormulario.png" onClick={alternarFormulario} className="alternarFormulario" />
+				</div>
 				{times.map((time, indice) => (
 					<Time
 						key={indice}
